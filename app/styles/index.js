@@ -1,10 +1,12 @@
 /**
  * Created by sonnguyent1 on 11/08/2016.
  */
-var styles = {
+module.exports = {
     transparentBg: {
         background: 'transparent'
+    },
+    space: {
+        marginTop: '25px'
     }
-};
 
-module.exports = styles;
+};
