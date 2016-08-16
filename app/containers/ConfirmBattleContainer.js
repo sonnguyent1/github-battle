@@ -46,7 +46,7 @@ module.exports = React.createClass({
 
     handleInitiateBattle: function () {
         this.context.router.push({
-            pathname: '/result',
+            pathname: '/results',
             state: {
                 playersInfo: this.state.playersInfo
             }

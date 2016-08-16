@@ -5,13 +5,11 @@ var React = require('react');
 var Link = require('react-router').Link;
 
 var styles = require('../styles');
-var UserDetails = require('../components/UserDetails');
-var UserDetailsWrapper = require('../components/UserDetailsWrapper');
+var UserDetails = require('./UserDetails');
+var UserDetailsWrapper = require('./UserDetailsWrapper');
+var MainContainer = require('./MainContainer');
+var Loading = require('./Loading');
 
-
-function puke(obj) {
-    return <pre>{JSON.stringify(obj, null, ' ')}</pre>
-}
 
 module.exports = React.createClass({
     propTypes: {
@@ -22,8 +20,8 @@ module.exports = React.createClass({
 
     render: function() {
         return this.props.isLoading === true
-            ? <p>LOADING!</p>
-            : (<div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
+            ? <Loading speed={800} text="Waiting"/>
+            : (<MainContainer>
                 <h1>Confirm Players</h1>
                 <div className="col-sm-8 col-sm-offset-2">
                     <UserDetailsWrapper header="Player One">
@@ -47,6 +45,6 @@ module.exports = React.createClass({
                         </Link>
                     </div>
                 </div>
-              </div>);
+              </MainContainer>);
     }
 });

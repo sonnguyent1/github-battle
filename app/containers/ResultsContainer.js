@@ -11,7 +11,7 @@ module.exports = React.createClass({
     getInitialState: function () {
         return {
             isLoading: true,
-            score: []
+            scores: []
         };
     },
 
@@ -26,7 +26,7 @@ module.exports = React.createClass({
     },
 
     render: function () {
-        return <Result isLoading={this.state.isLoading}
+        return <Results isLoading={this.state.isLoading}
                        playersInfo={this.props.location.state.playersInfo}
                        scores={this.state.scores}/>;
     }
